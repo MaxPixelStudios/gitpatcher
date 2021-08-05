@@ -3,17 +3,16 @@ plugins {
     id 'groovy'
 
     id 'maven-publish'
-    id 'com.gradle.plugin-publish' version '0.9.10'
+    id 'com.gradle.plugin-publish' version '0.15.0'
 
-    id 'net.minecrell.licenser' version '0.4.1'
+    id 'org.cadixdev.licenser' version '0.6.1'
 }
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
-
-group = 'org.cadixdev.gradle'
+group = 'cn.maxpixel.gradle'
 version = '0.10.0-SNAPSHOT'
 description = 'A Gradle plugin to manage patches for Git repositories'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
 
 dependencies {
     implementation gradleApi()
@@ -37,21 +36,20 @@ task groovydocJar(type: Jar, dependsOn: groovydoc) {
 gradlePlugin {
     plugins {
         gitpatcher {
-            id = 'org.cadixdev.gitpatcher'
+            id = 'cn.maxpixel.gitpatcher'
             implementationClass = 'org.cadixdev.gradle.gitpatcher.GitPatcher'
         }
     }
 }
 
 pluginBundle {
-    website = 'https://github.com/CadixDev/gitpatcher'
+    website = 'https://github.com/MaxPixelStudios/gitpatcher'
     vcsUrl = website
     description = project.description
     tags = ['git']
 
     plugins {
-        gitpatcherPlugin {
-            id = 'org.cadixdev.gitpatcher'
+        gitpatcher {
             displayName = 'gitpatcher'
         }
     }

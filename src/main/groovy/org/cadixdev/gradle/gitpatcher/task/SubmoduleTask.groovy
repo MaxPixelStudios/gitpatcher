@@ -22,8 +22,11 @@
 
 package org.cadixdev.gradle.gitpatcher.task
 
+import org.gradle.api.tasks.Internal
+
 abstract class SubmoduleTask extends GitTask {
 
+    @Internal
     String submodule
 
     {

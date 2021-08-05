@@ -22,10 +22,11 @@
 
 package org.cadixdev.gradle.gitpatcher.task
 
-import static java.lang.System.out
-
 import org.cadixdev.gradle.gitpatcher.Git
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.TaskAction
+
+import static java.lang.System.out
 
 class UpdateSubmodulesTask extends SubmoduleTask {
 
@@ -46,6 +47,7 @@ class UpdateSubmodulesTask extends SubmoduleTask {
         git.submodule('update', '--init', '--recursive') >> out
     }
 
+    @Internal
     String getRef() {
         ref
     }
