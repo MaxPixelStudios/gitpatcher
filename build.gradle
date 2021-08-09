@@ -58,6 +58,7 @@ pluginBundle {
 publishing {
     repositories {
         maven {
+            name = 'github'
             url = 'https://maven.pkg.github.com/MaxPixelStudios/gitpatcher'
             credentials {
                 username = System.getenv('GPR_USERNAME')
