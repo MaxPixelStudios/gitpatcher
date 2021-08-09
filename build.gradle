@@ -54,3 +54,15 @@ pluginBundle {
         }
     }
 }
+
+publishing {
+    repositories {
+        maven {
+            url = 'https://maven.pkg.github.com/MaxPixelStudios/gitpatcher'
+            credentials {
+                username = System.getenv('GPR_USERNAME')
+                password = System.getenv('GPR_TOKEN')
+            }
+        }
+    }
+}
