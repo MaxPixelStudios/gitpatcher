@@ -52,6 +52,7 @@ abstract class PatchTask extends SubmoduleTask {
         return new File(repo, '.git')
     }
 
+    @Internal
     File getRefCache() {
         return new File(gitDir, '.gitpatcher_ref')
     }

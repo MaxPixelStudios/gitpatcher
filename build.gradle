@@ -3,7 +3,6 @@ plugins {
     id 'groovy'
 
     id 'maven-publish'
-    id 'com.gradle.plugin-publish' version '0.15.0'
 
     id 'org.cadixdev.licenser' version '0.6.1'
 }
@@ -38,19 +37,6 @@ gradlePlugin {
         gitpatcher {
             id = 'cn.maxpixel.gitpatcher'
             implementationClass = 'org.cadixdev.gradle.gitpatcher.GitPatcher'
-        }
-    }
-}
-
-pluginBundle {
-    website = 'https://github.com/MaxPixelStudios/gitpatcher'
-    vcsUrl = website
-    description = project.description
-    tags = ['git']
-
-    plugins {
-        gitpatcher {
-            displayName = 'gitpatcher'
         }
     }
 }
